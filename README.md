@@ -24,37 +24,6 @@ ChatAPI/
 └── ChatAPI.API            # Controllers, Hubs, Program.cs
 ```
 
-## Features
-
-### Authentication
-- User registration with email and username
-- Login with JWT token generation (24-hour expiration)
-- Password hashing with BCrypt
-- JWT-based authorization for protected endpoints
-
-## TODO
-
-### 1. Logout Functionality
-- Implement token revocation mechanism
-- Add token blacklist (Redis-based)
-- Terminate SignalR connections on logout
-- Add logout endpoint to AuthController
-
-### 2. Refresh Token System
-- Add RefreshToken entity and repository
-- Implement refresh token generation on login
-- Create refresh endpoint for token renewal
-- Add refresh token rotation for security
-- Update token expiration to shorter duration (15 minutes for access token, 7 days for refresh token)
-
-### 3. Scalability & Distributed System
-- Add Redis backplane for SignalR multi-server support
-- Implement load balancer with sticky sessions
-- Add Redis for distributed state management (rate limiting, user presence)
-- Deploy to cloud platform (Azure/AWS)
-- Configure auto-scaling for high availability
-- Add health checks and monitoring
-
 ### REST API Endpoints
 
 **Auth**
@@ -102,6 +71,36 @@ ChatAPI/
 
 **UserRooms** (Join table)
 - UserId, RoomId, JoinedAt
+
+
+## TODO
+
+### 1. Logout Functionality
+- Implement token revocation mechanism
+- Add token blacklist (Redis-based)
+- Terminate SignalR connections on logout
+- Add logout endpoint to AuthController
+
+### 2. Refresh Token System
+- Add RefreshToken entity and repository
+- Implement refresh token generation on login
+- Create refresh endpoint for token renewal
+- Add refresh token rotation for security
+- Update token expiration to shorter duration (15 minutes for access token, 7 days for refresh token)
+
+### 3. Scalability & Distributed System
+- Add Redis backplane for SignalR multi-server support
+- Implement load balancer with sticky sessions
+- Add Redis for distributed state management (rate limiting, user presence)
+- Deploy to cloud platform (Azure/AWS)
+- Configure auto-scaling for high availability
+- Add health checks and monitoring
+
+## Authentication
+- User registration with email and username
+- Login with JWT token generation (24-hour expiration)
+- Password hashing with BCrypt
+- JWT-based authorization for protected endpoints
 
 ## Setup Instructions
 
